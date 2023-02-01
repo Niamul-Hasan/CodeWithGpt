@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 function NavBar() {
     const [isClicked, setIsClicked] = useState(false);
     const handleClicked = () => {
-        setIsClicked(true);
+        setIsClicked(!isClicked);
     }
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
@@ -30,7 +30,7 @@ function NavBar() {
                             <NavDropdown.Item href="#action/3.4">
                                 Separated link
                             </NavDropdown.Item>
-                            <NavDropdown className={`${isClicked}?d-block:d-none`}>
+                            <NavDropdown className={`${isClicked ? 'd-block' : 'd-none'}`}>
                                 <NavDropdown.Item href="#action/3.2">
                                     Another action
                                 </NavDropdown.Item>
