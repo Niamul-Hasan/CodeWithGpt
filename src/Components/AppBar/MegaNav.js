@@ -1,81 +1,50 @@
-import React, { useState } from 'react';
-import './MegaNav.css';
+import React, { useState } from "react";
 
-const MegaNavbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
+const Navbar = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     return (
-        <nav className="navbar">
-            <div className="navbar-header">
-                <a className="navbar-brand" href="www.google.com">
-                    React Mega Navbar
-                </a>
-                <button
-                    type="button"
-                    className="navbar-toggle"
-                    onClick={toggleDropdown}
-                >
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                </button>
-            </div>
-            <div className={`navbar-collapse ${isOpen ? 'show' : ''}`}>
+        <header>
+            <nav className="navbar">
+                <div className="navbar-brand">
+                    <a href="www.google.com">Brand</a>
+                </div>
                 <ul className="navbar-nav">
-                    <li className="nav-item dropdown">
-                        <a
-                            className="nav-link dropdown-toggle"
-                            href="www.google.com"
-                            onClick={toggleDropdown}
-                        >
-                            Dropdown 1
-                        </a>
-                        <div
-                            className={`dropdown-menu ${isOpen ? 'show' : ''}`}
-                            aria-labelledby="navbarDropdown"
-                        >
-                            <a className="dropdown-item" href="www.google.com">
-                                Action 1
-                            </a>
-                            <a className="dropdown-item" href="www.google.com">
-                                Action 2
-                            </a>
-                            <a className="dropdown-item" href="www.google.com">
-                                Action 3
-                            </a>
-                        </div>
+                    <li className="nav-item">
+                        <a className="nav-link" href="www.google.com">Home</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="www.google.com">About</a>
                     </li>
                     <li className="nav-item dropdown">
                         <a
                             className="nav-link dropdown-toggle"
                             href="www.google.com"
-                            onClick={toggleDropdown}
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         >
-                            Dropdown 2
+                            Services
                         </a>
-                        <div
-                            className={`dropdown-menu ${isOpen ? 'show' : ''}`}
-                            aria-labelledby="navbarDropdown"
-                        >
-                            <a className="dropdown-item" href="www.google.com">
-                                Action 1
-                            </a>
-                            <a className="dropdown-item" href="www.google.com">
-                                Action 2
-                            </a>
-                            <a className="dropdown-item" href="www.google.com">
-                                Action 3
-                            </a>
-                        </div>
+                        {isDropdownOpen && (
+                            <ul className="dropdown-content">
+                                <li className="dropdown-item">
+                                    <a href="www.google.com">Service 1</a>
+                                </li>
+                                <li className="dropdown-item">
+                                    <a href="www.google.com">Service 2</a>
+                                </li>
+                                <li className="dropdown-item">
+                                    <a href="www.google.com">Service 3</a>
+                                </li>
+                            </ul>
+                        )}
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="www.google.com">Contact</a>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+        </header>
     );
 };
 
-export default MegaNavbar;
+export default Navbar;
