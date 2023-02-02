@@ -11,6 +11,7 @@ body {
 header {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   color: #212529;
+
 }
 
 .nav-area {
@@ -19,6 +20,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px 20px;
+  background-color: teal;
 }
 
 .logo {
@@ -29,15 +31,22 @@ header {
 }
 
 .menus {
+  /* position: relative; */
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
+  background-color: yellow;
 }
 
 .menu-items {
+  /* position: relative; */
+  font-size: 18px;
+  /* background-color: #cc3852; */
+}
+
+.menu-items .dropdown-menu {
   position: relative;
-  font-size: 14px;
 }
 
 .menu-items a {
@@ -45,6 +54,7 @@ header {
   font-size: inherit;
   color: inherit;
   text-decoration: none;
+  /* background-color: aqua; */
 }
 
 .menu-items button {
@@ -53,7 +63,7 @@ header {
   color: inherit;
   font-size: inherit;
   border: none;
-  background-color: transparent;
+  /* background-color: orangered; */
   cursor: pointer;
   width: 100%;
 }
@@ -84,7 +94,7 @@ button span {
 }
 
 .dropdown {
-  position: absolute;
+  /* position: absolute; */
   right: 0;
   left: auto;
   box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
@@ -104,9 +114,9 @@ button span {
 }
 
 .dropdown .dropdown-submenu {
-  position: absolute;
+  /* position: absolute; */
   left: 100%;
-  top: -7px;
+  top: 5px;
 }
 
 /* content */

@@ -1,3 +1,4 @@
+import MenuItems from "./MenuItemRender";
 import { menuItems } from "./MenuItems";
 
 const Navbar2 = () => {
@@ -5,11 +6,8 @@ const Navbar2 = () => {
         <nav>
             <ul className="menus">
                 {menuItems.map((menu, index) => {
-                    return (
-                        <li className="menu-items" key={index}>
-                            <a href={menu.url}>{menu.title}</a>
-                        </li>
-                    );
+                    const depthLevel = 0;
+                    return <MenuItems items={menu} key={index} depthLevel={depthLevel} />;
                 })}
             </ul>
         </nav>
